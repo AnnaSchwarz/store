@@ -1,0 +1,100 @@
+@import "footer-icon.scss";
+.footer{
+	background: #282828 url(../img/background_footer.jpg);
+//	margin-top:-220px;
+	height:220px;
+	min-width:1300px;
+	//margin-top:0px;
+//	position: absolute;
+	color:#fff;
+	bottom:0;
+	left:0;
+	rigth:0;
+	width:100%;
+}
+.footer_top{
+	margin-bottom:17px;
+}
+.footer_left{
+	float:left;
+	width:550px;
+}
+.footer_right{
+	float:right;
+	width:550px;
+	display: inline-block;
+	text-align: right;
+}
+.footer_nav-item{
+	padding:10px;
+	display:inline-block;
+}
+
+.logo_footer{
+	float:left;
+	margin-top:70px;
+}
+.logo_img{
+	
+	display:block;
+	max-width:250px;
+}
+.logo_text{
+	position:absolute;
+	top:0;
+	left: -9999px;
+}
+.soc_items{
+	display:inline-block;
+	margin:0 12px;
+}
+.soc__link{
+		width:43px;
+		height:43px;
+		font-size: 14px;
+		display:inline-block;
+		@include sprite-image($fb);
+		@include sprite-width($vk);
+		@include sprite-height($tw);
+}
+.soc__link_fb{	@include sprite-position($fb);
+}
+.soc__link_fb:hover{
+	@include sprite-position($fb-hover);
+}
+.soc__link_tw{	
+	margin-right: 4px;
+	@include sprite-position($tw);
+}
+.soc__link_tw:hover{
+	@include sprite-position($tw-hover);
+}
+.soc__link_vk{	@include sprite-position($vk);
+}
+.soc__link_vk:hover{
+	@include sprite-position($vk-hover);
+}
+.footer_soc{
+	margin-top:34px;
+	margin-bottom:12px;
+	//margin-bottom:30px;
+}
+.footer_nav{
+	float:right;
+}
+.footer_nav-item{
+	display:inline-block;
+	font-size: 14px;
+}
+.footer_nav-link{
+	color:#fff;
+}
+
+.footer_bottom{
+	border-top:1px solid #494949;
+}
+.footer_copyright{
+	padding: 7px 0;
+	font-size: 12px;
+	text-align: center;
+}

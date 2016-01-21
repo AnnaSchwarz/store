@@ -1,0 +1,136 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$fb-hover-name: 'fb-hover';
+$fb-hover-x: 0px;
+$fb-hover-y: 26px;
+$fb-hover-offset-x: 0px;
+$fb-hover-offset-y: -26px;
+$fb-hover-width: 26px;
+$fb-hover-height: 26px;
+$fb-hover-total-width: 80px;
+$fb-hover-total-height: 52px;
+$fb-hover-image: '../img/header-soc.png';
+$fb-hover: (0px, 26px, 0px, -26px, 26px, 26px, 80px, 52px, '../img/header-soc.png', 'fb-hover', );
+$fb-name: 'fb';
+$fb-x: 26px;
+$fb-y: 26px;
+$fb-offset-x: -26px;
+$fb-offset-y: -26px;
+$fb-width: 26px;
+$fb-height: 26px;
+$fb-total-width: 80px;
+$fb-total-height: 52px;
+$fb-image: '../img/header-soc.png';
+$fb: (26px, 26px, -26px, -26px, 26px, 26px, 80px, 52px, '../img/header-soc.png', 'fb', );
+$tw-hover-name: 'tw-hover';
+$tw-hover-x: 54px;
+$tw-hover-y: 0px;
+$tw-hover-offset-x: -54px;
+$tw-hover-offset-y: 0px;
+$tw-hover-width: 26px;
+$tw-hover-height: 26px;
+$tw-hover-total-width: 80px;
+$tw-hover-total-height: 52px;
+$tw-hover-image: '../img/header-soc.png';
+$tw-hover: (54px, 0px, -54px, 0px, 26px, 26px, 80px, 52px, '../img/header-soc.png', 'tw-hover', );
+$tw-name: 'tw';
+$tw-x: 54px;
+$tw-y: 26px;
+$tw-offset-x: -54px;
+$tw-offset-y: -26px;
+$tw-width: 26px;
+$tw-height: 26px;
+$tw-total-width: 80px;
+$tw-total-height: 52px;
+$tw-image: '../img/header-soc.png';
+$tw: (54px, 26px, -54px, -26px, 26px, 26px, 80px, 52px, '../img/header-soc.png', 'tw', );
+$vk-hover-name: 'vk-hover';
+$vk-hover-x: 0px;
+$vk-hover-y: 0px;
+$vk-hover-offset-x: 0px;
+$vk-hover-offset-y: 0px;
+$vk-hover-width: 27px;
+$vk-hover-height: 26px;
+$vk-hover-total-width: 80px;
+$vk-hover-total-height: 52px;
+$vk-hover-image: '../img/header-soc.png';
+$vk-hover: (0px, 0px, 0px, 0px, 27px, 26px, 80px, 52px, '../img/header-soc.png', 'vk-hover', );
+$vk-name: 'vk';
+$vk-x: 27px;
+$vk-y: 0px;
+$vk-offset-x: -27px;
+$vk-offset-y: 0px;
+$vk-width: 27px;
+$vk-height: 26px;
+$vk-total-width: 80px;
+$vk-total-height: 52px;
+$vk-image: '../img/header-soc.png';
+$vk: (27px, 0px, -27px, 0px, 27px, 26px, 80px, 52px, '../img/header-soc.png', 'vk', );
+$spritesheet-width: 80px;
+$spritesheet-height: 52px;
+$spritesheet-image: '../img/header-soc.png';
+$spritesheet-sprites: ($fb-hover, $fb, $tw-hover, $tw, $vk-hover, $vk, );
+$spritesheet: (80px, 52px, '../img/header-soc.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.sidebar
+	.categ
+		ul.categ_list
+			- var items =["Флагманы", "Бюджетная линейка"]
+			each item in items
+				li(class="categ__item_"+((item =="Бюджетная линейка") ? ''+'active':''))
+					a(href="#").categ__link=item
+	.filter
+		ul.filter__list
+			li.filter__item
+				.filter__title
+					a(href="#").filter__title-link Наличие в магазинах
+				.filter__content
+					ul.filter__choose
+						- var items =["Во всех магазинах", "В ближайшем ко мне магазине"]
+						each item in items
+							li.filter__choose-item
+								label.filter__choose-label
+									input(name="loc" type ="radio").filter__choose-input
+									.filter__choose-elem
+									.filter__choose-text=item
+			li.filter__item
+				.filter__title
+					a(href="#").filter__title-link Бренды
+				.filter__content
+					.accordion-inner-block
+						label(for="lenovo").accordion__section-label
+							input(type="checkbox" name="brands" id="lenovo").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.filter__choose-text Lenovo
+					.accordion-inner-block
+						label(for="apple").accordion__section-label
+							input(type="checkbox" name="brands" id="apple").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.filter__choose-text Apple
+					.accordion-inner-block
+						label(for="samsung").accordion__section-label
+							input(type="checkbox" name="brands" id="samsung").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.filter__choose-text Samsung
+					.accordion-inner-block
+						label(for="asus").accordion__section-label
+							input(type="checkbox" name="brands" id="asus").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.filter__choose-text Asus
+					.accordion-inner-block
+						label(for="motorola").accordion__section-label
+							input(type="checkbox" name="brands" id="motorola").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.filter__choose-text Motorola
+					.filter__reset-wrap
+						a(href="#").filter__reset Сбросить фильтр
+			li.filter__item
+				.filter__title
+					a(href="#").filter__title-link Цена
+				.filter__content
+					.filter__slider
+						.filter__slider-displays
+							.filter__slider-left
+								.filter__slider-text от
+								input(name="" type="text" placeholder="").filter__slider-input.filter__slider-input_from
+							.filter__slider-right
+								.filter__slider-text до
+								input(name="" type="text" placeholder="").filter__slider-input.filter__slider-input_to
+			li.filter__item
+				.filter__title
+					a(href="#").filter__title-link Цвет
+				.filter__content
+					ul.filter__colours
+						- var colours=['ffffff','cccccc','000000','0a3153','ff1800','fff343','fb914a','92c37c','40a6ff','9870ad','dc78ad','7f401d']
+						each colour in colours
+							li.filter__colour-item
+								a(href="#" style="background-color:#"+colour).filter__colours-link
+
+			li.filter__item
+				.filter__title
+					a(href="#").filter__title-link Операционные системы
+				.filter__content
+					.accordion-inner-block
+						label(for="Android").accordion__section-label
+							input(type="checkbox" name="brands" id="Android").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.accordion__section-text Android
+					.accordion-inner-block
+						label(for="iOS").accordion__section-label
+							input(type="checkbox" name="brands" id="iOS").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.accordion__section-text iOS
+					.accordion-inner-block
+						label(for="Windows Mobile").accordion__section-label
+							input(type="checkbox" name="brands" id="Windows Mobile").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.accordion__section-text Windows Mobile
+					.accordion-inner-block
+						label(for="Symbian").accordion__section-label
+							input(type="checkbox" name="brands" id="Symbian").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.accordion__section-text Symbian
+					.accordion-inner-block
+						label(for="Custom").accordion__section-label
+							input(type="checkbox" name="brands" id="Custom").accordion__section-input.accordion__section-input_hidden
+							.accordion__section-fake-checkbox
+							.accordion__section-text Custom
+					.filter__reset-wrap
+						a(href="#").filter__reset Сбросить фильтр
+			
+

@@ -1,0 +1,159 @@
+@import "cont.scss";
+@import "header-soc.scss";
+
+.header{
+	background: #fff;
+}
+
+/*-------------header top-------*/
+.header_top{
+	border-bottom:1px solid #ebedef;
+	padding: 23px 0;
+}
+
+.header_left{
+	width:50%;
+	float: left;
+}
+.soc_item{
+	@include inlineblock(middle);
+	margin-left:14px;
+
+	&:first-child{
+		margin-left:0;
+	}
+}
+.soc_link{
+	width:26px;
+	height:26px;
+	display:inline-block;
+	@include sprite-image($fb-hover);
+	@include sprite-width($vk);
+	@include sprite-height($tw);
+}
+.soc_icon_fb{	@include sprite-position($fb);
+}
+.soc_icon_fb:hover{
+	@include sprite-position($fb-hover);
+}
+.soc_icon_tw{	
+	@include sprite-position($tw);
+}
+.soc_icon_tw:hover{
+	@include sprite-position($tw-hover);
+}
+.soc_icon_vk{	@include sprite-position($vk);
+}
+.soc_icon_vk:hover{
+	@include sprite-position($vk-hover);
+}
+
+.soc_icon{
+	@include absolute-center;
+}
+
+.soc_item .soc_item_fb{
+	.soc_icon{
+		@include sprite($tw);
+	}
+}
+//sprite
+
+.header_right{
+	float:right;
+}
+.address{
+	@include inlineblock(middle);
+	margin-right: 65px;
+
+	&:before{
+		content:'';
+		@include sprite($map-pin);
+		@include inlineblock(middle);
+		margin-right:9px;
+	}
+}
+.phone{
+	@include inlineblock(middle);
+	color:#000;
+	text-decoration: none;
+	margin-right:25px;
+
+	&:before{
+		content:'';
+		@include sprite($tel);
+		@include inlineblock(middle);
+		margin-right:11px;
+	}
+}
+
+.header_bottom{
+	background:#f4f4f4;
+	padding:30px 0;
+}
+.logo{
+	float:left;
+}
+
+.logo_img{
+	display:block;
+	max-width:250px;
+}
+
+.logo_text{
+	position:absolute;
+	top:0;
+	left: -9999px;
+}
+
+.search{
+	float:left;
+	margin-right:20px;
+	margin-left:26px;
+}
+
+.menu{
+	float:left;
+	padding-top:8px;
+	display:inline;
+}
+
+.menu_link{
+	font-size: 16px;
+	line-height: 18px;
+	color:#000;
+	text-decoration:none;
+
+	&:hover{
+		color:#ff6600;
+	}
+}
+
+.menu_item{
+	//@include inlineblock();
+	display: inline-block;
+	margin-left:28px;
+
+	&:first-child{
+		margin-left:0;
+	}
+}
+
+.search_input{
+	border: 1px solid #dee1e4;
+	@include border-radius(5px);
+	padding: 8px 15px;
+	width: 259px;
+	margin-right:-7px;
+}
+
+.search_bottom{
+	width:78px;
+	height:36px;
+	background:#ff6600;
+	color:#fff;
+	//font
+	border: 0 none;
+	@include border-radius(0 5px 5px 0);
+	border:1px solid #ff6600;
+}

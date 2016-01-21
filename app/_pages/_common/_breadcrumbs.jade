@@ -1,0 +1,7 @@
+.breadcrumbs
+	.container
+		ul.bread_list
+			- var items = ["Главная", "Каталог"]
+				each item in items
+					li.bread_item
+						a(href ="#" class="bread_link bread_link" +((item == "Каталог") ? '_active' : ''))=item
