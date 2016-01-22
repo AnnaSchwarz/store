@@ -1463,11 +1463,25 @@ The `sprites` mixin generates identical output to the CSS template
   background: #fbfbfb; }
 
 .filter__item {
-  padding: 0 27px;
   line-height: 45px;
   border-top: 1px solid #dee1e4; }
   .filter__item:first-child {
     border-top: none; }
+
+.filter__title {
+  padding: 0 27px; }
+
+.filter__title:hover {
+  background-color: #d9e5ea; }
+  .filter__title:hover:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 20px; }
+
+.filter__content {
+  padding: 0 27px; }
 
 .filter__title-link {
   text-decoration: none;
@@ -1476,6 +1490,11 @@ The `sprites` mixin generates identical output to the CSS template
   font-size: 16px;
   display: inline-block;
   margin-bottom: 18px; }
+  .filter__title-link.active {
+    text-decoration: none; }
+
+.filter__title-link:hover {
+  background-color: #d9e5ea; }
 
 .filter__choose-label {
   display: block;
@@ -1668,7 +1687,8 @@ The `sprites` mixin generates identical output to the CSS template
 .accordion__section-text {
   display: inline-block;
   vertical-align: top;
-  min-width: 240px; }
+  min-width: 240px;
+  padding-left: 10px; }
 
 /* --------- checkboxes --------- */
 .accordion__section-fake-checkbox {
@@ -1716,9 +1736,9 @@ The `sprites` mixin generates identical output to the CSS template
   font-size: 14px;
   line-height: 16px;
   color: #000;
+  margin-top: 6px;
   max-width: 240px;
-  margin-left: 8px;
-  padding-top: 9px; }
+  margin-left: 8px; }
 
 .filter__reset {
   color: #5db2fc;
@@ -1732,10 +1752,12 @@ The `sprites` mixin generates identical output to the CSS template
   margin-left: -10px; }
 
 .filter__colours-link {
-  border: 1px solid #dee1e4;
+  border: 2px solid #dee1e4;
   width: 36px;
   height: 36px;
   display: block; }
+  .filter__colours-link.active {
+    border-color: #f60; }
 
 .filter__colour-item {
   display: inline-block;
@@ -1774,6 +1796,26 @@ The `sprites` mixin generates identical output to the CSS template
   vertical-align: middle;
   font-size: 14px;
   line-height: 16px; }
+
+.open:after {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/sprite_all.png);
+  background-position: 0px -49px;
+  width: 18px;
+  height: 11px;
+  margin-top: 20px;
+  float: right; }
+
+.close:after {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/sprite_all.png);
+  background-position: -18px -49px;
+  width: 18px;
+  height: 11px;
+  margin-top: 20px;
+  float: right; }
 
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
@@ -2265,19 +2307,23 @@ p {
   margin-left: 35px;
   text-align: justify; }
 
-.column {
-  float: left;
-  width: 50%;
-  /*margin-botton:25px;
-  p{
-  	font-size:14px;
-  	line-height:20px;
-  	color:#000;
-  	
-  }*/ }
-  .column:first-child {
-    margin-left: -35px; }
+/*
+.column{
+	float:left;
+	width: 50%;
+	/*margin-botton:25px;
+	p{
+		font-size:14px;
+		line-height:20px;
+		color:#000;
+		
+	}
+	&:first-child{
+		margin-left:-35px;
+	}
 
+}
+*/
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
 

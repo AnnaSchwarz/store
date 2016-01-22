@@ -35,13 +35,31 @@
 	background: #fbfbfb;
 }
 .filter__item{
-	padding: 0 27px;
+//	padding: 0 27px;
 	line-height: 45px;
 	border-top:1px solid #dee1e4;
 
 	&:first-child{
 		border-top: none;
 	}
+}
+.filter__title{
+	padding: 0 27px;
+}
+.filter__title:hover{
+	background-color:#d9e5ea;
+		&:after{
+			content:'';
+			display:block;
+			position:absolute;
+			right:10px;
+			top:20px;
+	//		@include sprite($show-line);
+	}
+}
+
+.filter__content{
+	padding: 0 27px;
 }
 .filter__title-link{
 	text-decoration:none;
@@ -50,6 +68,13 @@
 	font-size:16px;
 	display:inline-block;
 	margin-bottom:18px;
+
+	&.active{
+		text-decoration:none;
+	}
+}
+.filter__title-link:hover{
+	background-color:#d9e5ea;
 }
 .filter__choose-label{
 	display:block;
@@ -223,6 +248,7 @@
 .accordion__section-text {
 	@include inlineblock(top);
 	min-width: 240px;
+	padding-left: 10px;
 
 }
 
@@ -262,9 +288,10 @@
 	font-size:14px;
 	line-height:16px;
 	color:#000;
+	margin-top: 6px;
 	max-width:240px;
 	margin-left:8px;
-	padding-top: 9px;
+//	padding-top: 9px;
 }
 .filter__reset{
 	color:#5db2fc;
@@ -280,10 +307,14 @@
 	margin-left:-10px;
 }
 .filter__colours-link{
-	border: 1px solid #dee1e4;
+	border: 2px solid #dee1e4;
 	width:36px;
 	height:36px;
 	display:block;
+
+	&.active{
+		border-color:#f60;
+	}
 }
 .filter__colour-item{
 	display:inline-block;
@@ -320,4 +351,21 @@
 	@include inlineblock(middle);
 	font-size:14px;
 	line-height:16px;
+}
+
+.open:after{
+	content:'';
+	display:inline-block;
+	@include sprite($hide-line);
+	margin-top: 20px;
+	float: right;
+	//margin-left: 102px;
+}
+.close:after{
+	content:'';
+	display:inline-block;
+	@include sprite($show-line);
+	//margin-left: 102px;
+	    margin-top: 20px;
+	float: right;
 }

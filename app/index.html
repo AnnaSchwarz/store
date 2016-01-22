@@ -81,8 +81,8 @@
 								<div class="filter">
 									<ul class="filter__list">
 										<li class="filter__item">
-											<div class="filter__title"><a href="#" class="filter__title-link">Наличие в магазинах</a></div>
-											<div class="filter__content">
+											<div class="filter__title open"><a href="#accordion-1" class="filter__title-link">Наличие в магазинах</a></div>
+											<div id="accordion-1" class="filter__content">
 												<ul class="filter__choose">
 													<li class="filter__choose-item">
 														<label class="filter__choose-label">
@@ -102,48 +102,47 @@
 											</div>
 										</li>
 										<li class="filter__item">
-											<div class="filter__title"><a href="#" class="filter__title-link">Бренды</a></div>
+											<div class="filter__title open"><a href="#" class="filter__title-link">Бренды</a></div>
 											<div class="filter__content">
 												<div class="accordion-inner-block">
 													<label for="lenovo" class="accordion__section-label">
 														<input type="checkbox" name="brands" id="lenovo" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
-														<div class="filter__choose-text">Lenovo</div>
+														<div class="accordion__section-text">Lenovo</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="apple" class="accordion__section-label">
 														<input type="checkbox" name="brands" id="apple" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
-														<div class="filter__choose-text">Apple</div>
+														<div class="accordion__section-text">Apple</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="samsung" class="accordion__section-label">
 														<input type="checkbox" name="brands" id="samsung" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
-														<div class="filter__choose-text">Samsung</div>
+														<div class="accordion__section-text">Samsung</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="asus" class="accordion__section-label">
 														<input type="checkbox" name="brands" id="asus" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
-														<div class="filter__choose-text">Asus</div>
+														<div class="accordion__section-text">Asus</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="motorola" class="accordion__section-label">
 														<input type="checkbox" name="brands" id="motorola" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
-														<div class="filter__choose-text">Motorola</div>
+														<div class="accordion__section-text">Motorola</div>
 													</label>
-												</div>
-												<div class="filter__reset-wrap"><a href="#" class="filter__reset">Сбросить фильтр</a></div>
+												</div><a href="#" class="filter__reset">Сбросить фильтр</a>
 											</div>
 										</li>
 										<li class="filter__item">
-											<div class="filter__title"><a href="#" class="filter__title-link">Цена</a></div>
+											<div class="filter__title open"><a href="#" class="filter__title-link">Цена</a></div>
 											<div class="filter__content">
 												<div class="filter__slider">
 													<div class="filter__slider-displays">
@@ -156,11 +155,12 @@
 															<input name="" type="text" placeholder="" class="filter__slider-input filter__slider-input_to">
 														</div>
 													</div>
+													<div id="slider"></div>
 												</div>
 											</div>
 										</li>
 										<li class="filter__item">
-											<div class="filter__title"><a href="#" class="filter__title-link">Цвет</a></div>
+											<div class="filter__title open"><a href="#" class="filter__title-link">Цвет</a></div>
 											<div class="filter__content">
 												<ul class="filter__colours">
 													<li class="filter__colour-item"><a href="#" style="background-color:#ffffff" class="filter__colours-link"></a></li>
@@ -179,39 +179,39 @@
 											</div>
 										</li>
 										<li class="filter__item">
-											<div class="filter__title"><a href="#" class="filter__title-link">Операционные системы</a></div>
+											<div class="filter__title open"><a href="#" class="filter__title-link">Операционные системы</a></div>
 											<div class="filter__content">
 												<div class="accordion-inner-block">
 													<label for="Android" class="accordion__section-label">
-														<input type="checkbox" name="brands" id="Android" class="accordion__section-input accordion__section-input_hidden">
+														<input type="checkbox" name="os" id="Android" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
 														<div class="accordion__section-text">Android</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="iOS" class="accordion__section-label">
-														<input type="checkbox" name="brands" id="iOS" class="accordion__section-input accordion__section-input_hidden">
+														<input type="checkbox" name="os" id="iOS" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
 														<div class="accordion__section-text">iOS</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="Windows Mobile" class="accordion__section-label">
-														<input type="checkbox" name="brands" id="Windows Mobile" class="accordion__section-input accordion__section-input_hidden">
+														<input type="checkbox" name="os" id="Windows Mobile" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
 														<div class="accordion__section-text">Windows Mobile</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="Symbian" class="accordion__section-label">
-														<input type="checkbox" name="brands" id="Symbian" class="accordion__section-input accordion__section-input_hidden">
+														<input type="checkbox" name="os" id="Symbian" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
 														<div class="accordion__section-text">Symbian</div>
 													</label>
 												</div>
 												<div class="accordion-inner-block">
 													<label for="Custom" class="accordion__section-label">
-														<input type="checkbox" name="brands" id="Custom" class="accordion__section-input accordion__section-input_hidden">
+														<input type="checkbox" name="os" id="Custom" class="accordion__section-input accordion__section-input_hidden">
 														<div class="accordion__section-fake-checkbox"></div>
 														<div class="accordion__section-text">Custom</div>
 													</label>
@@ -235,7 +235,7 @@
 									</div>
 								</div>
 								<div class="products">
-									<ul class="products-list filter-list">
+									<ul class="products-list filter-blocks">
 										<li class="products-item">
 											<div class="products-info__left">
 												<div class="products-slider">
@@ -900,5 +900,11 @@
 				</div>
 			</div>
 		</footer>
+		<script src="bower/jquery/dist/jquery.js"></script>
+		<script src="js/main.js"></script>
+		<script src="bower/jquery.columnizer/src/jquery.columnizer.js" type="text/javascript"></script>
+		<script src='bower/jquery-ui/ui/slider.js' type="text/javascript"></script>
+		<script src='bower/jquery-ui/ui/mouse.js' type="text/javascript"></script>
+
 	</body>
 </html>
